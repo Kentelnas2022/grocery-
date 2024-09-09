@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grocery List</title>
+    <link rel="stylesheet" href="/yay/styles/styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Grocery List</h1>
+        <form id="grocery-form">
+            <input type="text" id="item-name" placeholder="Product Name" required>
+            <input type="text" id="item-brand" placeholder="Brand" required>
+            <input type="number" id="item-price" placeholder="Price (₱)" required>
+            <input type="text" id="item-weight" placeholder="Weight/Volume" required>
+            <input type="number" id="item-quantity" placeholder="Quantity" required>
+            <input type="text" id="item-store" placeholder="Store" required>
+            <select id="item-category" required>
+                <option value="">Select Category</option>
+                <option value="Fruits">Fruits</option>
+                <option value="Vegetables">Vegetables</option>
+                <option value="Canned goods">Canned goods</option>
+                <option value="Crackers">Crackers</option>
+            </select>
+            <input type="file" id="item-image" accept="image/*" required>
+            <button type="submit">Add Item</button>
+        </form>
+        <a href="list.html" class="view-list-button">View Grocery List</a>
+    </div>
+
+    <script src="/yay/js/item.js"></script>
+    <script src="/yay/js/script.js"></script>
+</body>
+</html>

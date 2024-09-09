@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login & Signup</title>
+    <link rel="stylesheet" href="/yay/styles/reglog.css">
+</head>
+<body>
+    <div class="wrapper">
+        <div class="title" id="form-title">Login Form</div>
+        <form id="login-form" onsubmit="handleLogin(event)">
+            <div class="field">
+                <input type="text" id="login-email" required>
+                <label for="login-email">Email Address</label>
+            </div>
+            <div class="field">
+                <input type="password" id="login-password" required>
+                <label for="login-password">Password</label>
+            </div>
+            <div class="content">
+                <div class="checkbox">
+                    <input type="checkbox" id="remember-me">
+                    <label for="remember-me">Remember me</label>
+                </div>
+            </div>
+            <div class="field">
+                <input type="submit" value="Login">
+            </div>
+            <div class="signup-link">
+                Not a member? <a href="#" id="show-signup">Signup now</a>
+            </div>
+        </form>
+
+        <form id="signup-form" class="hidden">
+            <div class="field">
+                <input type="text" id="signup-username" required>
+                <label for="signup-username">Username</label>
+            </div>
+            <div class="field">
+                <input type="email" id="signup-email" required>
+                <label for="signup-email">Email Address</label>
+            </div>
+            <div class="field">
+                <input type="password" id="signup-password" required>
+                <label for="signup-password">Password</label>
+            </div>
+            <div class="field">
+                <input type="password" id="signup-confirm-password" required>
+                <label for="signup-confirm-password">Confirm Password</label>
+            </div>
+            <div class="field">
+                <input type="submit" value="Signup">
+            </div>
+            <div class="signup-link">
+                Already a member? <a href="#" id="show-login">Login now</a>
+            </div>
+        </form>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const loginForm = document.getElementById('login-form');
+            const signupForm = document.getElementById('signup-form');
+            const title = document.getElementById('form-title');
+            const showSignup = document.getElementById('show-signup');
+            const showLogin = document.getElementById('show-login');
+        
+            showSignup.addEventListener('click', (event) => {
+                event.preventDefault();
+                loginForm.classList.add('hidden');
+                signupForm.classList.remove('hidden');
+                title.textContent = 'Signup Form';
+            });
+        
+            showLogin.addEventListener('click', (event) => {
+                event.preventDefault();
+                signupForm.classList.add('hidden');
+                loginForm.classList.remove('hidden');
+                title.textContent = 'Login Form';
+            });
+        });
+
+        function handleLogin(event) {
+            event.preventDefault(); // Prevent the default form submission
+            // Here you can add authentication logic
+            // Redirect to another page on successful login
+            window.location.href = 'index.html'; // Change this to your desired page
+        }
+    </script>
+</body>
+</html>
